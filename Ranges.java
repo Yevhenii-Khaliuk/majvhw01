@@ -29,14 +29,12 @@ public class Ranges {
                     result.append("[").append(minRange).append(" ").append(maxRange).append("]");
                 }
                 minRange = array[i];
-                if (i == arrayLength - 1) {
-                    result.append("[").append(minRange).append("]");
-                    break;
-                }
-            }
-            if (i == arrayLength - 1) {
-                result.append("[").append(minRange).append(" ").append(array[i]).append("]");
-            }
+            }            
+        }
+        if (array[arrayLength - 1] - array[arrayLength - 2] == 1) {
+            result.append("[").append(minRange).append(" ").append(array[arrayLength - 1]).append("]");
+        } else {
+            result.append("[").append(array[arrayLength - 1]).append("]");
         }
 
         System.out.println("Result:");
