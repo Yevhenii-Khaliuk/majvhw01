@@ -17,20 +17,25 @@ public class RestoreArray {
             array[i] = scanner.nextInt();
         }
 
-        int[] restoredArray = new int[arrayLength];
+        array = restoreArray(array);
+
+        System.out.print("Result: ");
         for (int i = 0; i < arrayLength; i++) {
+            System.out.print(array[i] + " ");
+        }
+
+        scanner.close();
+    }
+
+    public static int[] restoreArray(int[] array) {
+        int[] restoredArray = new int[array.length];
+        for (int i = 0; i < array.length; i++) {
             if (array[i] >= 0) {
                 restoredArray[i] = array[i];
             } else {
                 restoredArray[i] = (array[i - 1] + array [i + 1]) / 2;
             }
         }
-
-        System.out.print("Result: ");
-        for (int i = 0; i < arrayLength; i++) {
-            System.out.print(restoredArray[i] + " ");
-        }
-
-        scanner.close();
+        return restoredArray;
     }
 }

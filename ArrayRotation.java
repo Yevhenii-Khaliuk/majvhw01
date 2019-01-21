@@ -19,27 +19,32 @@ public class ArrayRotation {
         }
         
         // If k greater than or equal to array length, result is done.
-        if (k >= arrayLength) {      
-            System.out.print("Result: ");
-            for (int i = 0; i < arrayLength; i++) {
-                System.out.print(array[i] + " ");
-            }
+        if (k >= arrayLength) {
+            output(array);
         } else {
-            // Here comes main logic.
-            int[] result = new int[arrayLength];
-            int remainingElems = arrayLength - k;
-            for (int i = 0; i < remainingElems; i++) {
-                result[i] = array[i + k];
-            }
-            for (int i = 0; i < k; i++) {
-                result[i + remainingElems] = array[i];
-            }
-            System.out.print("Result: ");
-            for (int i = 0; i < arrayLength; i++) {
-                System.out.print(result[i] + " ");
-            }
+            array = rotateArray(array, k);
+            output(array);
         }
 
         scanner.close();
+    }
+
+    public static int[] rotateArray(int[] array, int k) {
+        int[] result = new int[array.length];
+        int remainingElems = array.length - k;
+        for (int i = 0; i < remainingElems; i++) {
+            result[i] = array[i + k];
+        }
+        for (int i = 0; i < k; i++) {
+            result[i + remainingElems] = array[i];
+        }
+        return result;
+    }
+
+    public static void output(int[] array) {
+        System.out.print("Result: ");
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + " ");
+        }
     }
 }
