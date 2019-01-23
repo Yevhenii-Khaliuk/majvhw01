@@ -30,27 +30,19 @@ public class Ranges {
         for (int i = 1; i < array.length; i++) {
             if (array[i] - array[i - 1] > 1) {
                 maxRange = array[i - 1];
-                checkMiddleElems(result, minRange, maxRange);
+                makeRanges(result, minRange, maxRange);
                 minRange = array[i];
             }
         }
-        checkLastElem(result, array, minRange);
+        makeRanges(result, minRange, array[array.length - 1]);
         return result.toString();
     }
 
-    private static void checkMiddleElems(StringBuilder sb, int minRange, int maxRange) {
+    private static void makeRanges(StringBuilder sb, int minRange, int maxRange) {
         if (maxRange == minRange) {
             sb.append("[").append(minRange).append("]");
         } else {
             sb.append("[").append(minRange).append(" ").append(maxRange).append("]");
-        }
-    }
-
-    private  static  void  checkLastElem(StringBuilder sb, int[] arr, int minRange) {
-        if (arr[arr.length - 1] - arr[arr.length - 2] == 1) {
-            sb.append("[").append(minRange).append(" ").append(arr[arr.length - 1]).append("]");
-        } else {
-            sb.append("[").append(arr[arr.length - 1]).append("]");
         }
     }
 }
