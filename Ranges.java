@@ -39,10 +39,10 @@ public class Ranges {
     }
 
     private static void makeRanges(StringBuilder sb, int minRange, int maxRange) {
-        if (maxRange == minRange) {
-            sb.append("[").append(minRange).append("]");
-        } else {
-            sb.append("[").append(minRange).append(" ").append(maxRange).append("]");
+        sb.append("[").append(minRange);
+        if (maxRange != minRange) {
+            sb.append(" ").append(maxRange);
         }
+        sb.append("]");
     }
 }
