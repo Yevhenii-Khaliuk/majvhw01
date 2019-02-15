@@ -14,5 +14,4 @@ public class RestoreArrayTest {
         int[] actualResult = RestoreArray.restoreArray(new int[] {1, -1, 3, 4, -2, 6});
         assertArrayEquals(expectedResult, actualResult);
     }
-
 }

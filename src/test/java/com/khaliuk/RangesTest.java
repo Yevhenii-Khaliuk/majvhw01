@@ -28,5 +28,4 @@ public class RangesTest {
         String actualResult = Ranges.arrayRanges(new int[] {1});
         assertEquals(expectedResult, actualResult);
     }
-
 }
