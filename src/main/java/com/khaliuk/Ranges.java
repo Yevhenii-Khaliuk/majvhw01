@@ -1,3 +1,5 @@
+package com.khaliuk;
+
 import java.util.Scanner;
 
 public class Ranges {
